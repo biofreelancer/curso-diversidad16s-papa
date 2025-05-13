@@ -1,0 +1,12 @@
+nextflow run nf-core/ampliseq \
+    --dada_ref_tax_custom taxonomy/silva/silva_nr99_v138.2_toSpecies_trainset.fa.gz \
+    --dada_ref_tax_custom_sp taxonomy/silva/silva_v138.2_assignSpecies.fa.gz \
+    --input  "2-samplesheets/camaron_intestino.tsv" \
+    --metadata "3-metadata/camaron_intestino_metadata.tsv" \
+    --outdir "results/curso_camaron_intestino" \
+    --skip_cutadapt \
+    --single_end \
+    --max_cpus 2 --max_memory 4.GB \
+    -c a-configfiles/low-res-machine.config \
+    -profile docker \
+    -resume
